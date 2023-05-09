@@ -1,0 +1,67 @@
+G91 ;Relative positioning
+G1 E-2 F2700 ;Retract a bit
+G1 E-2 Z0.2 F2400 ;Retract and raise Z
+G1 X5 Y5 F3000 ;Wipe out
+G1 Z10 ;Raise Z more
+G90 ;Absolute positioning
+
+G1 X0 Y{machine_depth} ;Present print
+M106 S0 ;Turn-off fan
+M104 S0 ;Turn-off hotend
+M140 S0 ;Turn-off bed
+
+M84 X Y E ;Disable all steppers but Z
+
+
+; Código de Encerramento Personalizado para Ender 3
+G91 ; Definir posicionamento relativo
+G1 E-2 F2700 ; Retrair um pouco
+G1 E-2 Z0.2 F2400 ; Retrair e levantar Z
+G1 X5 Y5 F3000 ; Limpar, se movendo rapido
+G1 Z10 ; Levantar Z mais
+G90 ; Posicionamento absoluto
+
+G1 X0 Y{machine_depth} ; Apresentar impressão
+M106 S0 ; Desligar ventilador
+M104 S0 ; Desligar hotend
+M140 S0 ; Desligar cama
+
+M84 X Y E ; Desativar todos os motores exceto Z
+;M84 Z ; Desativar o motor Z
+
+;M140 S30 ; Definir a temperatura da mesa como 30 graus Celsius
+M190 S30 ; Aguardar até que a temperatura da mesa atinja 30 graus Celsius
+;M300 S1000 P500 ; Emitir um som de 1000 Hz por 500 milissegundos quando a temperatura da mesa atingir 30 graus Celsius
+M300 S432 P500 ; Emitir um som de 432 Hz por 500 milissegundos quando a temperatura da mesa atingir 30 graus Celsius
+
+; FIM do Código de Encerramento Personalizado para Ender 3
+
+;Comentário sobre o código
+;Este comando move o extrusor (E) 2mm para trás a uma velocidade de 2700 mm/min. Isso é útil para evitar que o filamento respingue quando a impressora se move para uma nova posição.
+
+;Comentário sobre o código
+;Este comando move o extrusor (E) 2mm para trás e levanta o bico (Z) 0,2mm a uma velocidade de 2400 mm/min. Isso é útil para evitar que o filamento respingue e para garantir que o bico não obstrua quando a impressora se move para uma nova posição.
+
+;Comentário sobre o código
+;Este comando move a impressora para a posição X5 Y5 a uma velocidade de 3000 mm/min. Isso é útil para limpar o bico antes de começar a imprimir.
+
+;Comentário sobre o código
+;Este comando levanta o bico (Z) em 10mm. Isso é útil para evitar que a impressora colida com a peça durante a impressão.
+
+;Comentário sobre o código
+;Este comando define o posicionamento absoluto, o que significa que as coordenadas X, Y e Z são medidas a partir do ponto de origem da impressora.
+
+;Comentário sobre o código
+;Este comando move a impressora para a posição X0 Y{machine_depth}, que é o ponto de origem da impressora. Isso é útil para posicionar a impressora para a próxima impressão.
+
+;Comentário sobre o código
+;Este comando desliga o ventilador da impressora.
+
+;Comentário sobre o código
+;Este comando desliga o hotend (bico) da impressora.
+
+;Comentário sobre o código
+;Este comando desliga a cama aquecida da impressora.
+
+;Comentário sobre o código
+;Este comando desativa todos os motores exceto o eixo Z. Isso é útil para economizar energia e evitar que a impressora se mova acidentalmente quando não estiver em uso.
