@@ -1,4 +1,4 @@
-; Ender 3 Custom Start G-code
+; Ender 3 Custom Start G-code (@DjEdu28)
 ; Código de Início Personalizado para Ender 3 (@DjEdu28)
 G92 E0 ; Define a posição atual do extrusor como zero
 G28 ; Move cada eixo para o seu ponto de origem

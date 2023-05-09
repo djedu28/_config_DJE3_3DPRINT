@@ -1,4 +1,4 @@
-; Código de Encerramento Personalizado para Ender 3
+; Código de Encerramento Personalizado para Ender 3 por @DjEdu28 em 2023
 G91 ; Definir posicionamento relativo
 G1 E-2 F2700 ; Retrair um pouco
 G1 E-2 Z0.2 F2400 ; Retrair e levantar Z
